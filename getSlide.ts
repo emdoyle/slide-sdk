@@ -1,7 +1,8 @@
 import * as anchor from "@project-serum/anchor";
 import slide from "./idl/slide.json";
 import { Slide } from "./types/slide";
-import { Idl, Program, Provider, Wallet } from "@project-serum/anchor";
+import { Idl, Program, Provider } from "@project-serum/anchor";
+import { Wallet } from "@project-serum/anchor/src/provider";
 import { PublicKey, Connection } from "@solana/web3.js";
 export type slideHookArgs = {
   programId: PublicKey;
