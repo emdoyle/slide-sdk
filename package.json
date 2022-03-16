@@ -11,7 +11,7 @@
   },
   "name": "@slidexyz/slide-sdk",
   "version": "0.1.0",
-  "description": "Slide SDK for implementing clients",
+  "description": "Slide SDK for client implementations",
   "main": "index.js",
   "scripts": {
     "build": "tsc -d --sourceMap"
@@ -20,7 +20,7 @@
     "type": "git",
     "url": "git+https://github.com/emdoyle/slide-sdk.git"
   },
-  "files": ["lib/**/*"],
+  "files": ["lib/**/*", "idl/*"],
   "keywords": [
     "solana",
     "slide",
