@@ -743,6 +743,14 @@
             "type": "u8"
           },
           {
+            "name": "user",
+            "type": "publicKey"
+          },
+          {
+            "name": "expenseManager",
+            "type": "publicKey"
+          },
+          {
             "name": "role",
             "type": {
               "defined": "Role"
