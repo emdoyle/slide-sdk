@@ -2,6 +2,7 @@ import { BN, Program } from "@project-serum/anchor";
 import { Slide } from "./types/slide";
 import {
   AccountInfo,
+  Connection,
   Keypair,
   PublicKey,
   Transaction,
@@ -24,34 +25,34 @@ export function signers(program: Program<Slide>, keypairs: Payer[]): Keypair[] {
 }
 
 export async function getBalanceSum(
-  program,
+  connection: Connection,
   addresses: PublicKey[]
 ): Promise<BN> {
   let sum = new BN("0", 10);
   let current;
   for (let i = 0; i < addresses.length; i++) {
-    current = toBN(await getBalance(program, addresses[i]));
+    current = toBN(await getBalance(connection, addresses[i]));
     sum = sum.add(current);
   }
   return sum;
 }
 
 export async function getAccountInfo(
-  program: Program<Slide>,
+  connection: Connection,
   account: PublicKey
 ) {
-  return await program.provider.connection.getAccountInfo(account);
+  return await connection.getAccountInfo(account);
 }
 
-export async function getBalance(program: Program<Slide>, account: PublicKey) {
-  return await program.provider.connection.getBalance(account);
+export async function getBalance(connection: Connection, account: PublicKey) {
+  return await connection.getBalance(account);
 }
 
 export async function getRentExemptBalance(
-  program: Program<Slide>,
+  connection: Connection,
   accountInfo: AccountInfo<Buffer>
 ) {
-  return await program.provider.connection.getMinimumBalanceForRentExemption(
+  return await connection.getMinimumBalanceForRentExemption(
     accountInfo.data.byteLength
   );
 }
