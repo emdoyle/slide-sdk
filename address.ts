@@ -52,6 +52,21 @@ export function getAccessRecordAddressAndBump(
   );
 }
 
+export function getProposalExecutionAddressAndBump(
+  programId: PublicKey,
+  expenseManager: PublicKey,
+  proposal: PublicKey
+) {
+  return anchor.utils.publicKey.findProgramAddressSync(
+    [
+      Buffer.from("proposal-execution"),
+      expenseManager.toBuffer(),
+      proposal.toBuffer(),
+    ],
+    programId
+  );
+}
+
 export function getTokenOwnerRecordAddressAndBump(
   realm: PublicKey,
   mint: PublicKey,

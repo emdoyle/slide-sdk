@@ -10,7 +10,7 @@
     "typescript": "^4.3.5"
   },
   "name": "@slidexyz/slide-sdk",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "Slide SDK for client implementations",
   "main": "lib/index.js",
   "scripts": {
