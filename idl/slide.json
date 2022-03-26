@@ -990,35 +990,40 @@
     },
     {
       "code": 6010,
+      "name": "FailedToParseProposal",
+      "msg": "Proposal body could not be parsed"
+    },
+    {
+      "code": 6011,
       "name": "PackageOwnershipMismatch",
       "msg": "ExpensePackage is not owned by signer, or not related to provided expense manager"
     },
     {
-      "code": 6011,
+      "code": 6012,
       "name": "PackageFrozen",
       "msg": "ExpensePackage has already been submitted or is otherwise locked"
     },
     {
-      "code": 6012,
+      "code": 6013,
       "name": "PackageMissingInfo",
       "msg": "ExpensePackage is missing required info such as name or quantity"
     },
     {
-      "code": 6013,
+      "code": 6014,
       "name": "PackageNotApproved",
       "msg": "ExpensePackage has not been manually approved"
     },
     {
-      "code": 6014,
+      "code": 6015,
       "name": "ManagerInsufficientFunds",
       "msg": "Insufficient funds exist in the manager to approve this expense"
     },
     {
-      "code": 6015,
+      "code": 6016,
       "name": "DataTooLarge"
     }
   ],
   "metadata": {
-    "address": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+    "address": "3nunqfARwEnmSGg5b9aDEWuBVQHHHhztRAXR4bM4CYCE"
   }
 }
