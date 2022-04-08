@@ -90,10 +90,6 @@ export type Slide = {
         {
           "name": "realm",
           "type": "publicKey"
-        },
-        {
-          "name": "governanceAuthority",
-          "type": "publicKey"
         }
       ]
     },
@@ -166,6 +162,10 @@ export type Slide = {
         {
           "name": "realm",
           "type": "publicKey"
+        },
+        {
+          "name": "withdrawalAmount",
+          "type": "u64"
         }
       ]
     },
@@ -576,6 +576,11 @@ export type Slide = {
           "isSigner": false
         },
         {
+          "name": "proposalExecution",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
           "name": "accessRecord",
           "isMut": true,
           "isSigner": false
@@ -622,6 +627,11 @@ export type Slide = {
           "isSigner": false
         },
         {
+          "name": "proposalExecution",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
           "name": "expenseManager",
           "isMut": true,
           "isSigner": false
@@ -639,6 +649,11 @@ export type Slide = {
         {
           "name": "squadTreasury",
           "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
           "isSigner": false
         },
         {
@@ -743,6 +758,14 @@ export type Slide = {
             "type": "u8"
           },
           {
+            "name": "user",
+            "type": "publicKey"
+          },
+          {
+            "name": "expenseManager",
+            "type": "publicKey"
+          },
+          {
             "name": "role",
             "type": {
               "defined": "Role"
@@ -827,6 +850,26 @@ export type Slide = {
           {
             "name": "quantity",
             "type": "u64"
+          },
+          {
+            "name": "nonce",
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "proposalExecution",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "proposal",
+            "type": "publicKey"
+          },
+          {
+            "name": "executedAt",
+            "type": "i64"
           }
         ]
       }
@@ -911,66 +954,76 @@ export type Slide = {
     },
     {
       "code": 6002,
+      "name": "UserCannotApproveOrDenyOwnExpense",
+      "msg": "User cannot approve or deny their own expense package"
+    },
+    {
+      "code": 6003,
       "name": "IncorrectNonce",
       "msg": "Client provided incorrect nonce"
     },
     {
-      "code": 6003,
+      "code": 6004,
       "name": "SPLGovRealmMismatch",
       "msg": "Realm does not match ExpenseManager"
     },
     {
-      "code": 6004,
+      "code": 6005,
       "name": "SquadMismatch",
       "msg": "Squad does not match ExpenseManager"
     },
     {
-      "code": 6005,
+      "code": 6006,
       "name": "SquadMintMismatch",
       "msg": "Squad mint does not match TokenAccount mint"
     },
     {
-      "code": 6006,
+      "code": 6007,
       "name": "WrongProposalType",
       "msg": "Proposal is not the right type for this instruction"
     },
     {
-      "code": 6007,
+      "code": 6008,
       "name": "ProposalAlreadyExecuted",
       "msg": "Proposal has already been executed"
     },
     {
-      "code": 6008,
+      "code": 6009,
       "name": "InvalidProposal",
       "msg": "Proposal has invalid data for execution"
     },
     {
-      "code": 6009,
+      "code": 6010,
+      "name": "FailedToParseProposal",
+      "msg": "Proposal body could not be parsed"
+    },
+    {
+      "code": 6011,
       "name": "PackageOwnershipMismatch",
       "msg": "ExpensePackage is not owned by signer, or not related to provided expense manager"
     },
     {
-      "code": 6010,
+      "code": 6012,
       "name": "PackageFrozen",
       "msg": "ExpensePackage has already been submitted or is otherwise locked"
     },
     {
-      "code": 6011,
+      "code": 6013,
       "name": "PackageMissingInfo",
       "msg": "ExpensePackage is missing required info such as name or quantity"
     },
     {
-      "code": 6012,
+      "code": 6014,
       "name": "PackageNotApproved",
       "msg": "ExpensePackage has not been manually approved"
     },
     {
-      "code": 6013,
+      "code": 6015,
       "name": "ManagerInsufficientFunds",
       "msg": "Insufficient funds exist in the manager to approve this expense"
     },
     {
-      "code": 6014,
+      "code": 6016,
       "name": "DataTooLarge"
     }
   ]
@@ -1068,10 +1121,6 @@ export const IDL: Slide = {
         {
           "name": "realm",
           "type": "publicKey"
-        },
-        {
-          "name": "governanceAuthority",
-          "type": "publicKey"
         }
       ]
     },
@@ -1144,6 +1193,10 @@ export const IDL: Slide = {
         {
           "name": "realm",
           "type": "publicKey"
+        },
+        {
+          "name": "withdrawalAmount",
+          "type": "u64"
         }
       ]
     },
@@ -1554,6 +1607,11 @@ export const IDL: Slide = {
           "isSigner": false
         },
         {
+          "name": "proposalExecution",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
           "name": "accessRecord",
           "isMut": true,
           "isSigner": false
@@ -1600,6 +1658,11 @@ export const IDL: Slide = {
           "isSigner": false
         },
         {
+          "name": "proposalExecution",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
           "name": "expenseManager",
           "isMut": true,
           "isSigner": false
@@ -1617,6 +1680,11 @@ export const IDL: Slide = {
         {
           "name": "squadTreasury",
           "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
           "isSigner": false
         },
         {
@@ -1721,6 +1789,14 @@ export const IDL: Slide = {
             "type": "u8"
           },
           {
+            "name": "user",
+            "type": "publicKey"
+          },
+          {
+            "name": "expenseManager",
+            "type": "publicKey"
+          },
+          {
             "name": "role",
             "type": {
               "defined": "Role"
@@ -1805,6 +1881,26 @@ export const IDL: Slide = {
           {
             "name": "quantity",
             "type": "u64"
+          },
+          {
+            "name": "nonce",
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "proposalExecution",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "proposal",
+            "type": "publicKey"
+          },
+          {
+            "name": "executedAt",
+            "type": "i64"
           }
         ]
       }
@@ -1889,66 +1985,76 @@ export const IDL: Slide = {
     },
     {
       "code": 6002,
+      "name": "UserCannotApproveOrDenyOwnExpense",
+      "msg": "User cannot approve or deny their own expense package"
+    },
+    {
+      "code": 6003,
       "name": "IncorrectNonce",
       "msg": "Client provided incorrect nonce"
     },
     {
-      "code": 6003,
+      "code": 6004,
       "name": "SPLGovRealmMismatch",
       "msg": "Realm does not match ExpenseManager"
     },
     {
-      "code": 6004,
+      "code": 6005,
       "name": "SquadMismatch",
       "msg": "Squad does not match ExpenseManager"
     },
     {
-      "code": 6005,
+      "code": 6006,
       "name": "SquadMintMismatch",
       "msg": "Squad mint does not match TokenAccount mint"
     },
     {
-      "code": 6006,
+      "code": 6007,
       "name": "WrongProposalType",
       "msg": "Proposal is not the right type for this instruction"
     },
     {
-      "code": 6007,
+      "code": 6008,
       "name": "ProposalAlreadyExecuted",
       "msg": "Proposal has already been executed"
     },
     {
-      "code": 6008,
+      "code": 6009,
       "name": "InvalidProposal",
       "msg": "Proposal has invalid data for execution"
     },
     {
-      "code": 6009,
+      "code": 6010,
+      "name": "FailedToParseProposal",
+      "msg": "Proposal body could not be parsed"
+    },
+    {
+      "code": 6011,
       "name": "PackageOwnershipMismatch",
       "msg": "ExpensePackage is not owned by signer, or not related to provided expense manager"
     },
     {
-      "code": 6010,
+      "code": 6012,
       "name": "PackageFrozen",
       "msg": "ExpensePackage has already been submitted or is otherwise locked"
     },
     {
-      "code": 6011,
+      "code": 6013,
       "name": "PackageMissingInfo",
       "msg": "ExpensePackage is missing required info such as name or quantity"
     },
     {
-      "code": 6012,
+      "code": 6014,
       "name": "PackageNotApproved",
       "msg": "ExpensePackage has not been manually approved"
     },
     {
-      "code": 6013,
+      "code": 6015,
       "name": "ManagerInsufficientFunds",
       "msg": "Insufficient funds exist in the manager to approve this expense"
     },
     {
-      "code": 6014,
+      "code": 6016,
       "name": "DataTooLarge"
     }
   ]
