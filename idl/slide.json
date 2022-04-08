@@ -162,6 +162,10 @@
         {
           "name": "realm",
           "type": "publicKey"
+        },
+        {
+          "name": "withdrawalAmount",
+          "type": "u64"
         }
       ]
     },
@@ -1022,8 +1026,5 @@
       "code": 6016,
       "name": "DataTooLarge"
     }
-  ],
-  "metadata": {
-    "address": "3nunqfARwEnmSGg5b9aDEWuBVQHHHhztRAXR4bM4CYCE"
-  }
+  ]
 }
