@@ -90,6 +90,10 @@
         {
           "name": "realm",
           "type": "publicKey"
+        },
+        {
+          "name": "externalProgramId",
+          "type": "publicKey"
         }
       ]
     },
@@ -428,7 +432,12 @@
           "isSigner": true
         }
       ],
-      "args": []
+      "args": [
+        {
+          "name": "externalProgramId",
+          "type": "publicKey"
+        }
+      ]
     },
     {
       "name": "squadsCreateExpensePackage",
@@ -812,6 +821,10 @@
             "type": {
               "option": "publicKey"
             }
+          },
+          {
+            "name": "externalProgramId",
+            "type": "publicKey"
           }
         ]
       }

@@ -1,7 +1,25 @@
-import * as address from "./address";
-import * as utils from "./utils";
-import * as constants from "./constants";
-import { Slide } from "./types/slide";
-import { getSlide } from "./getSlide";
-
-export { address, utils, constants, Slide, getSlide };
+export {
+  getProposalExecutionAddressAndBump,
+  getAccessRecordAddressAndBump,
+  getExpensePackageAddressAndBump,
+  getExpenseManagerAddressAndBump,
+  getUserDataAddressAndBump,
+  getGovernanceAddressAndBump,
+  getNativeTreasuryAddressAndBump,
+  getTokenOwnerRecordAddressAndBump,
+} from "./address";
+export {
+  addAccountAsSigner,
+  getAccountInfo,
+  signers,
+  flushInstructions,
+  toBN,
+  getRentExemptBalance,
+  getBalanceSum,
+  getBalance,
+  Payer,
+  transfer,
+  setWritable,
+} from "./utils";
+export { Slide } from "./types/slide";
+export { getSlide } from "./getSlide";

@@ -10,7 +10,7 @@
     "typescript": "^4.3.5"
   },
   "name": "@slidexyz/slide-sdk",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Slide SDK for client implementations",
   "main": "lib/index.js",
   "scripts": {
@@ -20,7 +20,7 @@
     "type": "git",
     "url": "git+https://github.com/emdoyle/slide-sdk.git"
   },
-  "files": ["lib/**/*", "idl/*"],
+  "files": ["lib/**/*"],
   "keywords": [
     "solana",
     "slide",

@@ -90,6 +90,10 @@ export type Slide = {
         {
           "name": "realm",
           "type": "publicKey"
+        },
+        {
+          "name": "externalProgramId",
+          "type": "publicKey"
         }
       ]
     },
@@ -428,7 +432,12 @@ export type Slide = {
           "isSigner": true
         }
       ],
-      "args": []
+      "args": [
+        {
+          "name": "externalProgramId",
+          "type": "publicKey"
+        }
+      ]
     },
     {
       "name": "squadsCreateExpensePackage",
@@ -812,6 +821,10 @@ export type Slide = {
             "type": {
               "option": "publicKey"
             }
+          },
+          {
+            "name": "externalProgramId",
+            "type": "publicKey"
           }
         ]
       }
@@ -1121,6 +1134,10 @@ export const IDL: Slide = {
         {
           "name": "realm",
           "type": "publicKey"
+        },
+        {
+          "name": "externalProgramId",
+          "type": "publicKey"
         }
       ]
     },
@@ -1459,7 +1476,12 @@ export const IDL: Slide = {
           "isSigner": true
         }
       ],
-      "args": []
+      "args": [
+        {
+          "name": "externalProgramId",
+          "type": "publicKey"
+        }
+      ]
     },
     {
       "name": "squadsCreateExpensePackage",
@@ -1843,6 +1865,10 @@ export const IDL: Slide = {
             "type": {
               "option": "publicKey"
             }
+          },
+          {
+            "name": "externalProgramId",
+            "type": "publicKey"
           }
         ]
       }

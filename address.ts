@@ -1,6 +1,5 @@
 import { PublicKey } from "@solana/web3.js";
 import * as anchor from "@project-serum/anchor";
-import { SPL_GOV_PROGRAM_ID } from "./constants";
 
 export function getUserDataAddressAndBump(
   user: PublicKey,
@@ -42,9 +41,9 @@ export function getExpensePackageAddressAndBump(
 }
 
 export function getAccessRecordAddressAndBump(
-  programId: PublicKey,
   expenseManager: PublicKey,
-  user: PublicKey
+  user: PublicKey,
+  programId: PublicKey
 ) {
   return anchor.utils.publicKey.findProgramAddressSync(
     [Buffer.from("access-record"), expenseManager.toBuffer(), user.toBuffer()],
@@ -53,9 +52,9 @@ export function getAccessRecordAddressAndBump(
 }
 
 export function getProposalExecutionAddressAndBump(
-  programId: PublicKey,
   expenseManager: PublicKey,
-  proposal: PublicKey
+  proposal: PublicKey,
+  programId: PublicKey
 ) {
   return anchor.utils.publicKey.findProgramAddressSync(
     [
@@ -70,7 +69,8 @@ export function getProposalExecutionAddressAndBump(
 export function getTokenOwnerRecordAddressAndBump(
   realm: PublicKey,
   mint: PublicKey,
-  member: PublicKey
+  member: PublicKey,
+  programId: PublicKey
 ) {
   return anchor.utils.publicKey.findProgramAddressSync(
     [
@@ -79,13 +79,14 @@ export function getTokenOwnerRecordAddressAndBump(
       mint.toBuffer(),
       member.toBuffer(),
     ],
-    SPL_GOV_PROGRAM_ID
+    programId
   );
 }
 
 export function getGovernanceAddressAndBump(
   realm: PublicKey,
-  governedAccount: PublicKey
+  governedAccount: PublicKey,
+  programId: PublicKey
 ) {
   return anchor.utils.publicKey.findProgramAddressSync(
     [
@@ -93,13 +94,16 @@ export function getGovernanceAddressAndBump(
       realm.toBuffer(),
       governedAccount.toBuffer(),
     ],
-    SPL_GOV_PROGRAM_ID
+    programId
   );
 }
 
-export function getNativeTreasuryAddressAndBump(governance: PublicKey) {
+export function getNativeTreasuryAddressAndBump(
+  governance: PublicKey,
+  programId: PublicKey
+) {
   return anchor.utils.publicKey.findProgramAddressSync(
     [Buffer.from("native-treasury"), governance.toBuffer()],
-    SPL_GOV_PROGRAM_ID
+    programId
   );
 }
