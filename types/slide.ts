@@ -92,6 +92,12 @@ export type Slide = {
           "type": "publicKey"
         },
         {
+          "name": "governanceType",
+          "type": {
+            "defined": "GovernanceType"
+          }
+        },
+        {
           "name": "externalProgramId",
           "type": "publicKey"
         }
@@ -825,6 +831,14 @@ export type Slide = {
           {
             "name": "externalProgramId",
             "type": "publicKey"
+          },
+          {
+            "name": "governanceType",
+            "type": {
+              "option": {
+                "defined": "GovernanceType"
+              }
+            }
           }
         ]
       }
@@ -949,6 +963,26 @@ export type Slide = {
           },
           {
             "name": "Paid"
+          }
+        ]
+      }
+    },
+    {
+      "name": "GovernanceType",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Account"
+          },
+          {
+            "name": "Token"
+          },
+          {
+            "name": "Mint"
+          },
+          {
+            "name": "Program"
           }
         ]
       }
@@ -1136,6 +1170,12 @@ export const IDL: Slide = {
           "type": "publicKey"
         },
         {
+          "name": "governanceType",
+          "type": {
+            "defined": "GovernanceType"
+          }
+        },
+        {
           "name": "externalProgramId",
           "type": "publicKey"
         }
@@ -1869,6 +1909,14 @@ export const IDL: Slide = {
           {
             "name": "externalProgramId",
             "type": "publicKey"
+          },
+          {
+            "name": "governanceType",
+            "type": {
+              "option": {
+                "defined": "GovernanceType"
+              }
+            }
           }
         ]
       }
@@ -1993,6 +2041,26 @@ export const IDL: Slide = {
           },
           {
             "name": "Paid"
+          }
+        ]
+      }
+    },
+    {
+      "name": "GovernanceType",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Account"
+          },
+          {
+            "name": "Token"
+          },
+          {
+            "name": "Mint"
+          },
+          {
+            "name": "Program"
           }
         ]
       }

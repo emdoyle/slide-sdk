@@ -92,6 +92,12 @@
           "type": "publicKey"
         },
         {
+          "name": "governanceType",
+          "type": {
+            "defined": "GovernanceType"
+          }
+        },
+        {
           "name": "externalProgramId",
           "type": "publicKey"
         }
@@ -825,6 +831,14 @@
           {
             "name": "externalProgramId",
             "type": "publicKey"
+          },
+          {
+            "name": "governanceType",
+            "type": {
+              "option": {
+                "defined": "GovernanceType"
+              }
+            }
           }
         ]
       }
@@ -949,6 +963,26 @@
           },
           {
             "name": "Paid"
+          }
+        ]
+      }
+    },
+    {
+      "name": "GovernanceType",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Account"
+          },
+          {
+            "name": "Token"
+          },
+          {
+            "name": "Mint"
+          },
+          {
+            "name": "Program"
           }
         ]
       }
