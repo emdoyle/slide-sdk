@@ -150,6 +150,46 @@ export type Slide = {
       ]
     },
     {
+      "name": "splGovRevokeAccessRecord",
+      "accounts": [
+        {
+          "name": "accessRecord",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "expenseManager",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "governanceAuthority",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "nativeTreasury",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "realm",
+          "type": "publicKey"
+        },
+        {
+          "name": "user",
+          "type": "publicKey"
+        }
+      ]
+    },
+    {
       "name": "splGovWithdrawFromExpenseManager",
       "accounts": [
         {
@@ -634,6 +674,62 @@ export type Slide = {
       "args": []
     },
     {
+      "name": "squadsExecuteRevokeAccessProposal",
+      "accounts": [
+        {
+          "name": "proposal",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "proposalExecution",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "accessRecord",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "expenseManager",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "squad",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "squadMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "squadTreasury",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "member",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "signer",
+          "isMut": true,
+          "isSigner": true
+        }
+      ],
+      "args": []
+    },
+    {
       "name": "squadsExecuteWithdrawalProposal",
       "accounts": [
         {
@@ -1016,61 +1112,66 @@ export type Slide = {
     },
     {
       "code": 6005,
+      "name": "SPLGovernanceMismatch",
+      "msg": "Governance does not match ExpenseManager"
+    },
+    {
+      "code": 6006,
       "name": "SquadMismatch",
       "msg": "Squad does not match ExpenseManager"
     },
     {
-      "code": 6006,
+      "code": 6007,
       "name": "SquadMintMismatch",
       "msg": "Squad mint does not match TokenAccount mint"
     },
     {
-      "code": 6007,
+      "code": 6008,
       "name": "WrongProposalType",
       "msg": "Proposal is not the right type for this instruction"
     },
     {
-      "code": 6008,
+      "code": 6009,
       "name": "ProposalAlreadyExecuted",
       "msg": "Proposal has already been executed"
     },
     {
-      "code": 6009,
+      "code": 6010,
       "name": "InvalidProposal",
       "msg": "Proposal has invalid data for execution"
     },
     {
-      "code": 6010,
+      "code": 6011,
       "name": "FailedToParseProposal",
       "msg": "Proposal body could not be parsed"
     },
     {
-      "code": 6011,
+      "code": 6012,
       "name": "PackageOwnershipMismatch",
       "msg": "ExpensePackage is not owned by signer, or not related to provided expense manager"
     },
     {
-      "code": 6012,
+      "code": 6013,
       "name": "PackageFrozen",
       "msg": "ExpensePackage has already been submitted or is otherwise locked"
     },
     {
-      "code": 6013,
+      "code": 6014,
       "name": "PackageMissingInfo",
       "msg": "ExpensePackage is missing required info such as name or quantity"
     },
     {
-      "code": 6014,
+      "code": 6015,
       "name": "PackageNotApproved",
       "msg": "ExpensePackage has not been manually approved"
     },
     {
-      "code": 6015,
+      "code": 6016,
       "name": "ManagerInsufficientFunds",
       "msg": "Insufficient funds exist in the manager to approve this expense"
     },
     {
-      "code": 6016,
+      "code": 6017,
       "name": "DataTooLarge"
     }
   ]
@@ -1228,6 +1329,46 @@ export const IDL: Slide = {
       ]
     },
     {
+      "name": "splGovRevokeAccessRecord",
+      "accounts": [
+        {
+          "name": "accessRecord",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "expenseManager",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "governanceAuthority",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "nativeTreasury",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "realm",
+          "type": "publicKey"
+        },
+        {
+          "name": "user",
+          "type": "publicKey"
+        }
+      ]
+    },
+    {
       "name": "splGovWithdrawFromExpenseManager",
       "accounts": [
         {
@@ -1712,6 +1853,62 @@ export const IDL: Slide = {
       "args": []
     },
     {
+      "name": "squadsExecuteRevokeAccessProposal",
+      "accounts": [
+        {
+          "name": "proposal",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "proposalExecution",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "accessRecord",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "expenseManager",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "squad",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "squadMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "squadTreasury",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "member",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "signer",
+          "isMut": true,
+          "isSigner": true
+        }
+      ],
+      "args": []
+    },
+    {
       "name": "squadsExecuteWithdrawalProposal",
       "accounts": [
         {
@@ -2094,61 +2291,66 @@ export const IDL: Slide = {
     },
     {
       "code": 6005,
+      "name": "SPLGovernanceMismatch",
+      "msg": "Governance does not match ExpenseManager"
+    },
+    {
+      "code": 6006,
       "name": "SquadMismatch",
       "msg": "Squad does not match ExpenseManager"
     },
     {
-      "code": 6006,
+      "code": 6007,
       "name": "SquadMintMismatch",
       "msg": "Squad mint does not match TokenAccount mint"
     },
     {
-      "code": 6007,
+      "code": 6008,
       "name": "WrongProposalType",
       "msg": "Proposal is not the right type for this instruction"
     },
     {
-      "code": 6008,
+      "code": 6009,
       "name": "ProposalAlreadyExecuted",
       "msg": "Proposal has already been executed"
     },
     {
-      "code": 6009,
+      "code": 6010,
       "name": "InvalidProposal",
       "msg": "Proposal has invalid data for execution"
     },
     {
-      "code": 6010,
+      "code": 6011,
       "name": "FailedToParseProposal",
       "msg": "Proposal body could not be parsed"
     },
     {
-      "code": 6011,
+      "code": 6012,
       "name": "PackageOwnershipMismatch",
       "msg": "ExpensePackage is not owned by signer, or not related to provided expense manager"
     },
     {
-      "code": 6012,
+      "code": 6013,
       "name": "PackageFrozen",
       "msg": "ExpensePackage has already been submitted or is otherwise locked"
     },
     {
-      "code": 6013,
+      "code": 6014,
       "name": "PackageMissingInfo",
       "msg": "ExpensePackage is missing required info such as name or quantity"
     },
     {
-      "code": 6014,
+      "code": 6015,
       "name": "PackageNotApproved",
       "msg": "ExpensePackage has not been manually approved"
     },
     {
-      "code": 6015,
+      "code": 6016,
       "name": "ManagerInsufficientFunds",
       "msg": "Insufficient funds exist in the manager to approve this expense"
     },
     {
-      "code": 6016,
+      "code": 6017,
       "name": "DataTooLarge"
     }
   ]
